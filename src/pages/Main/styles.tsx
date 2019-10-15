@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import TranslationArea from '~/containers/Translation/Box';
-import TranslationNav from '~/containers/Translation/Nav';
-import Send from '~/containers/Translation/Send';
+import TranslationArea from '~/containers/Translation/TextField';
+import TranslationNav from '~/containers/Translation/NavMenu';
 import PageWrapper from '~/containers/PageWrapper';
 
 /**
@@ -24,8 +23,3 @@ export const StyledTranslationNav = styled(TranslationNav)`
 export const StyledTranslationArea = styled(TranslationArea)`
   background-color: #fff;
 `;
-
-/**
- * Send
- */
-export const StyledSend = styled(Send)``;

@@ -10,6 +10,9 @@ import {
   setTranslationResultAction,
 } from '~/providers/TranslationProvider/reducer';
 import { Translation } from '~/functions/Translation';
+import ResetButton from '../ResetButton';
+import { LABELS } from '~/constants';
+import StringCounter from '../StringCounter';
 
 type MainProps = ComponentPropTypes & {};
 
@@ -26,20 +29,23 @@ const TranslationArea: React.FC<MainProps> = props => {
   const handleTranslationChange = React.useCallback(
     (e: React.ChangeEvent<HTMLTextAreaElement>) => {
       const text = e.target.value;
-      const data = Translation(text);
+      const data = Translation(text, state.level);
       dispatch(setTranslationAction(text));
       dispatch(setTranslationResultAction(data));
     },
-    []
+    [state.level]
   );
 
   return (
     <StyledTextAreaBox className={props.className || ''}>
       <StyledTextArea
-        value=""
+        value={state.text}
         handleChange={handleTranslationChange}
-        placeholder="テキストを入力してください"
-      ></StyledTextArea>
+        placeholder={LABELS.PLACEHOLDER}
+      >
+        {state.text && state.text.length && <ResetButton />}
+        <StringCounter count={state.text.length} max={500} />
+      </StyledTextArea>
       <StyledTextArea
         value={state.result}
         disabled

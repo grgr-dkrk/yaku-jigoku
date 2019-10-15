@@ -1,10 +1,12 @@
-import styled from "styled-components";
-import Inner from "~/components/Atoms/Inner";
+import styled from 'styled-components';
+import Inner from '~/components/Atoms/Inner';
 
 /**
  * Wrapper
  */
-export const StyledMain = styled.main``;
+export const StyledMain = styled.main`
+  padding: 0 20px;
+`;
 
 /**
  * Inner

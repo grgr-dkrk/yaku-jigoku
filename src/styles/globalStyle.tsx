@@ -46,10 +46,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e779e', end
 		min-height: 100%;
 		position: relative;
 		padding-bottom: ${LAYOUT_SIZE.footer}px;
-		${BREAKPOINT.MD} {
-			min-height: 100vh;
-			padding-bottom: ${LAYOUT_SIZE.footerSP}px;
-		}
 	}
   a {
     text-decoration: none;

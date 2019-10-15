@@ -1,7 +1,7 @@
 export const LAYOUT_SIZE = {
   sidebar: 250,
   mainAreaMargin: 60,
-  innerWidthPc: 860,
+  innerWidthPc: 960,
   footer: 80,
   footerSP: 40,
 } as const;

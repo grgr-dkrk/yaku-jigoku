@@ -11,9 +11,9 @@ const Select: React.FC<InputProps> = props => {
   return (
     <StyledSelectWrap className={props.className || ''}>
       {props.children}
-      <StyledSelect onSelect={props.handleChange}>
+      <StyledSelect onChange={props.handleChange}>
         {props.options &&
-          props.options.map(option => <option>{option}</option>)}
+          props.options.map(option => <option key={option}>{option}</option>)}
       </StyledSelect>
     </StyledSelectWrap>
   );

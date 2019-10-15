@@ -17,10 +17,16 @@ export const LEVEL_LIST = {
   },
 } as const;
 
+export const CONSTANTS = {
+  NUM_MAX_TEXT: 500,
+};
+
 export const LABELS = {
   SITE_TITLE: 'YAKU † ZIGOQ 〜怒りの高速翻訳野郎〜',
   INPUT: '入力コア',
-  SELECT: '翻訳レベル',
+  SELECT: 'Level',
+  RESET: 'テキストを削除する',
+  PLACEHOLDER: 'テキストを入力してください',
   LEVEL: [
     LEVEL_LIST.NORMAL.label,
     LEVEL_LIST.HYPER.label,

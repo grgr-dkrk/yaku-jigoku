@@ -8,6 +8,7 @@ import { TranslationInitialState, TranslationStateType } from './state';
  */
 export const SET_TRANSLATION_TEXT = 'SET_TRANSLATION_TEXT' as const;
 export const SET_TRANSLATION_RESULT = 'SET_TRANSLATION_RESULT' as const;
+export const RESET_TRANSLATION = 'RESET_TRANSLATION' as const;
 export const SET_TRANSLATION_LEVEL = 'SET_TRANSLATION_LEVEL' as const;
 
 /**
@@ -37,6 +38,14 @@ export const setTranslationResultAction = (
   payload,
 });
 
+interface IresetTranslationAction extends Action {
+  type: typeof RESET_TRANSLATION;
+}
+
+export const resetTranslationAction = (): IresetTranslationAction => ({
+  type: RESET_TRANSLATION,
+});
+
 interface IsetTranslationLevelAction extends Action {
   type: typeof SET_TRANSLATION_LEVEL;
   payload: TranslationStateType['level'];
@@ -55,6 +64,7 @@ export const setTranslationLevelAction = (
 export type TranslationActionTypes =
   | IsetTranslationAction
   | IsetTranslationResultAction
+  | IresetTranslationAction
   | IsetTranslationLevelAction;
 
 /**
@@ -74,6 +84,12 @@ export function TranslationReducer(
       return {
         ...state,
         result: action.payload,
+      };
+    case RESET_TRANSLATION:
+      return {
+        ...state,
+        text: '',
+        result: '',
       };
     case SET_TRANSLATION_LEVEL:
       return {

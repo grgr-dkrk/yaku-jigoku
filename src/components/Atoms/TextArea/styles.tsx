@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 import { SITE_COLOR } from '../../../styles/valiables';
 
-export const StyledTextAreaWrap = styled.label``;
+export const StyledTextAreaWrap = styled.label`
+  position: relative;
+  display: block;
+`;
 
 export const StyledTextArea = styled.textarea`
   border: 1px solid ${SITE_COLOR.BORDER_COLOR};
